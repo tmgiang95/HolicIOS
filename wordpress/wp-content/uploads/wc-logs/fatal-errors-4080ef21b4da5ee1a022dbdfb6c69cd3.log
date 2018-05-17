@@ -1,0 +1,7 @@
+2018-05-17T03:02:47+00:00 CRITICAL Uncaught WC_API_Client_HTTP_Exception: Invalid JSON returned for http://localhost/wc-api/v2?oauth_consumer_key=ck_e5d3051f4ae096916d3741317dd21b18421039c6&oauth_timestamp=1526526167&oauth_nonce=263cd045bd9e632c55a8263242d21d8e5d6fd758&oauth_signature_method=HMAC-SHA256&oauth_signature=MhudmTg0Bc0qJspPx87Mp%2FmGj9pdwtf8MN1hZrBSwfA%3D. in /Applications/MAMP/htdocs/wordpress/wp-content/themes/storefront/lib/woocommerce-api/class-wc-api-client-http-request.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/wordpress/wp-content/themes/storefront/lib/woocommerce-api/class-wc-api-client.php(286): WC_API_Client_HTTP_Request->dispatch()
+#1 /Applications/MAMP/htdocs/wordpress/wp-content/themes/storefront/lib/woocommerce-api/resources/abstract-wc-api-client-resource.php(122): WC_API_Client->make_api_call('GET', '', NULL)
+#2 /Applications/MAMP/htdocs/wordpress/wp-content/themes/storefront/lib/woocommerce-api/resources/class-wc-api-client-resource-index.php(37): WC_API_Client_Resource->do_request()
+#3 /Applications/MAMP/ht
+

@@ -68,6 +68,39 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  * https://github.com/woocommerce/theme-customisations
  */
 
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'holic', '/products', array(
+        'methods' => 'GET',
+        'callback' => 'getproducts',
+    ) );
+    register_rest_route( 'holic', '/orders', array(
+        'methods' => 'GET',
+        'callback' => 'getorders',
+    ) );
+} );
+
+function getproducts( ) {
+    require_once 'class-wc-api-client.php';
+
+    $consumer_key = 'ck_e5d3051f4ae096916d3741317dd21b18421039c6'; // Add your own Consumer Key here
+    $consumer_secret = 'cs_6073ebaad2768feb7ceaec259924128d19740495'; // Add your own Consumer Secret here
+    $store_url = 'http://localhost:8888/wordpress'; // Add the home URL to the store you want to connect to here
+
+    // Initialize the class
+    $wc_api = new WC_API_Client( $consumer_key, $consumer_secret, $store_url );
+    return $wc_api->get_products();
+}
+function getorders( ) {
+    require_once 'class-wc-api-client.php';
+
+    $consumer_key = 'ck_e5d3051f4ae096916d3741317dd21b18421039c6'; // Add your own Consumer Key here
+    $consumer_secret = 'cs_6073ebaad2768feb7ceaec259924128d19740495'; // Add your own Consumer Secret here
+    $store_url = 'http://localhost:8888/wordpress'; // Add the home URL to the store you want to connect to here
+
+    // Initialize the class
+    $wc_api = new WC_API_Client( $consumer_key, $consumer_secret, $store_url );
+    return $wc_api->get_products();
+}
 
 
 
